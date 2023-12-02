@@ -69,9 +69,9 @@
                         Pour vous tenir informé des Offres de formations et des
                         Arrivages.
                     </p>
-                    <form action="" method="post">
-                        <input disabled type="email" name="email" placeholder="Entrez votre Mail" /><input disabled
-                            type="submit" value="Souscrire" />
+                    <form action="{{path('app_newsletter')}}" method="post">
+                        <input type="email" name="email" placeholder="Entrez votre Mail"
+                            class="form-control shadow-none" /><input type="submit" value="Souscrire" />
                     </form>
                 </div>
             </div>

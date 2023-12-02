@@ -3,6 +3,7 @@ twig:
   globals:
     company_name: "%company_name%"
     company_phone: "%company_phone%"
+    company_email: "%company_email%"
 
 when@test:
   twig:

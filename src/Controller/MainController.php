@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
+use App\Form\NewsletterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -10,11 +13,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     #[Route('', name: '')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        $contactForm = $this->createForm(ContactType::class);
+        $contactForm->handleRequest($request);
+
+        if ($contactForm->isSubmitted() && $contactForm->isValid()) {
+            dd($contactForm->getData());
+
+            return $this->redirectToRoute('app_main');
+        }
+
+        $contactForm = $contactForm->createView();
+        return $this->render('main/index.html.twig', compact('contactForm'));
     }
 
     #[Route('nos-services', name: '_services')]

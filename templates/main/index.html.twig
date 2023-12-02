@@ -1,33 +1,389 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-<style>
-    .example-wrapper {
-        margin: 1em auto;
-        max-width: 800px;
-        width: 95%;
-        font: 18px/1.5 sans-serif;
-    }
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="row">
+            <div class="col-xl-12">
+                <h1>
+                    VOTRE PARTENAIRE EN SOLUTIONS & INNOVATIONS TECHNOLOGIQUES, SERVICES DIGITAUX, FORMATION ASSISTANCE
+                    COACHING
+                </h1>
+            </div>
 
-    .example-wrapper code {
-        background: #F5F5F5;
-        padding: 2px 6px;
-    }
-</style>
+            <div class="col-xl-12 mt-3">
+                <a href="{{path('app_main_quote')}}" class="get-started-btn scrollto ">Obtenir un Devis</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<main id="main">
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+        <div class="container" data-aos="zoom-in">
+            <div class="clients-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/acfb.jpg')}}" class="img-fluid" alt="" />
+                    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at
-            <code><a href="{{ 'C:/Users/rosta/3D Objects/ROSTAND/PROJET/adesoft/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code>
-        </li>
-        <li>Your template at
-            <code><a href="{{ 'C:/Users/rosta/3D Objects/ROSTAND/PROJET/adesoft/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code>
-        </li>
-    </ul>
-</div>
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/alide.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/canada.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/enabel.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/kolping.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/hp-logo.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/windows.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/intel.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/acer.png')}}" class="img-fluid" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/asus.png')}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/img/clients/mediasoft.jpg')}}" class="img-fluid" alt="" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Clients Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-emoji-smile"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Plus de 200 clients satisfaits</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                    <div class="count-box">
+                        <i class="bi bi-journal-richtext"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Projets Menés à Bien!</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="bi bi-headset"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Assistances et Formations</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="bi bi-people"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Counts Section -->
+
+    <!-- ======= Tabs Section ======= -->
+    <section id="tabs" class="tabs">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-4">Découvrez notre Savoir Faire</h2>
+            <ul class="nav nav-tabs row d-flex">
+                <li class="nav-item col-3">
+                    <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                        <i class="ri-gps-line"></i>
+                        <h4 class="d-none d-lg-block">Vente de Matériel</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                        <i class="ri-body-scan-line"></i>
+                        <h4 class="d-none d-lg-block">
+                            Maintenance informatique & Réseau
+                        </h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                        <i class="ri-sun-line"></i>
+                        <h4 class="d-none d-lg-block">
+                            Présence Digitale & Logiciels de gestion
+                        </h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                        <i class="ri-store-line"></i>
+                        <h4 class="d-none d-lg-block">Formations et Assistances</h4>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                            <h3>Du matériel de qualité au service de nos clients</h3>
+                            <p class="fst-italic">
+                                Depuis plus de 7 ans, nous tissons des partenariats
+                                privilégiés avec les constructeurs et éditeurs informatiques
+                                reconnus pour la fiabilité et la performance de leurs
+                                produits. Ordinateurs fixes et portables, tablettes,
+                                serveurs, routeurs, onduleurs, imprimantes, logiciels… notre
+                                ambition est de vous apporter le matériel dont vous avez
+                                réellement besoin, qui réponde parfaitement à vos exigences
+                                de qualité et de budget.
+                            </p>
+                            <ul>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Des tarifs
+                                    préférentiels grâce à nos partenariats forts et
+                                    privilégiés : HP, Asus, Acer , Sophos, Intel,, Apple,
+                                    Microsoft.
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Nos conseils sur les
+                                    matériels les mieux adaptés à vos besoins. Avec un haut
+                                    niveau d'expertise sur l'entretien et la maintenance.
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Réactivité sur le
+                                    terrain & Livraison Express
+                                </li>
+                            </ul>
+                            <p>
+                                Nous assurons l'accompagnement complet de votre projet : du
+                                conseil à la mise en fonctionnement de vos équipements,
+                                notre équipe d'experts est en permanence à vos côtés et vous
+                                guidera dans votre projet d'achat ou renouvellement de
+                                matériel informatique en entreprise.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+                            <img src="{{asset('assets/img/tab1.webp')}}" alt="" class="img-fluid align-items-center"
+                                height="300px" width="600px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3></h3>
+                            <p>
+                                Le moindre dysfonctionnement de vos équipements
+                                informatiques peut générer des conséquences importantes sur
+                                votre activité. C'est pourquoi nous proposons des solutions
+                                de maintenance en phase avec vos besoins concrets et votre
+                                budget. Nous nous engageons à intervenir sur site dans les 4
+                                à 36 heures ouvrables, en fonction du niveau de gravité de
+                                la situation. Après notre intervention, vous recevez un
+                                rapport détaillé des travaux effectués.
+                            </p>
+                            <p class="fst-italic">Nos atouts :</p>
+                            <ul>
+                                <li>
+                                    <i class="ri-check-double-line"></i>Nos équipes techniques
+                                    hautement qualifiées et certifiées.
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Nos interventions
+                                    rapides et efficaces grâce à nos outils de surpervision et
+                                    de prise en main à distance.
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Un coût maîtrisé tout
+                                    compris : pièces, main d'œuvre et déplacements illimités.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{asset('assets/img/tab2.webp')}}" alt="" class="img-fluid" height="300px"
+                                width="600px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Nos Solutions Numériques</h3>
+                            <p>
+                                {{company_name}} vous ouvre l'accès à vos propres applications
+                                métiers.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Développement
+                                    d'application Web et Mobile pour faire asseoir votre
+                                    présence digitale
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Simplifiez la gestion
+                                    de votre activité grâce à nos applications intuitives et
+                                    performantes, depuis notre portail applicatif web et/ou à
+                                    partir de votre smartphone ou de votre tablette.
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i>Commercialisation
+                                    d'équipements et de services de télécommunication pour les
+                                    particuliers
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{asset('assets/img/tab3.webp')}}" alt="" class="img-fluid" height="300"
+                                width="600" />
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>
+                                Des formations en Informatique et Gestion des entreprises.
+                            </h3>
+                            <p>
+                                La dématérialisation des services et procédures de gestion
+                                en entreprise constitue l'un des plus grand avantage de ce
+                                siècle. Toutefois, il faut avoir une certaine maîtrise de
+                                ces techniques pour en profiter.
+                            </p>
+                            <p class="fst-italic">
+                                Pour cela Adesoft fait appel à des experts en Informatique
+                                et Gestion d'entreprise afin de Former, d'Informer et
+                                Accompagner les acteurs des entreprises.
+                            </p>
+                            <ul>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Rédactions de Manuels
+                                    de procédures informatiques <br />
+                                    Manuel de Sécurité Informatques
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Elaborations du
+                                    schema directeur Informatique des Institutions
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Analyse et conception
+                                    des systèmes d'informations et de gestions
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i> Système de veille
+                                    Informationnelle sur la Fiscalité Béninoise et le
+                                    SYSCOHADA
+                                </li>
+                            </ul>
+                            <p class="fst-italic">
+                                Vous trouverez ci joint notre dernier programme des formations
+                                disponibles.
+                                <a href="{{path('app_training')}}">Cliquez Ici!</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{asset('assets/img/tab4.webp')}}" alt="" class="img-fluid" height="300"
+                                width="600" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Tabs Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Contact</h2>
+                <p></p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-envelope"></i>
+                                <h3>Email</h3>
+                                <p>{{company_email}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-phone-call"></i>
+                                <h3>Téléphone et Whatsapp</h3>
+                                <p>
+                                    {{company_phone}}<br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    {{form_start(contactForm)}}
+                    <p class="text-danger">
+                        {{form_errors(contactForm)}}
+                    </p>
+                    <div class="row">
+                        <div class="col form-group">
+                            {{form_widget(contactForm.name)}}
+                        </div>
+                        <div class="col form-group ">
+                            {{form_widget(contactForm.email)}}
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        {{form_widget(contactForm.subject)}}
+                    </div>
+                    <div class="form-group mt-2">
+                        {{form_widget(contactForm.message)}}
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-danger">Soumettre</button>
+                    </div>
+                    {{form_end(contactForm)}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+</main>
+<!-- End #main -->
 {% endblock %}

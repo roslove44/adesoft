@@ -6,6 +6,7 @@
 parameters:
   company_name: "Adesoft Technologies"
   company_phone: "+229 96 38 05 84"
+  company_email: "contact@adesofttech.com"
 
 services:
   # default configuration for services in *this* file
