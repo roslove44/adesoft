@@ -1,0 +1,49 @@
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto">
+            <a href="{{path('app_main')}}">{{company_name}}<span>.</span></a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.php" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li>
+                    <a class="nav-link scrollto {% if app.current_route == 'app_main' %}active{% endif %}"
+                        href="{{path('app_main')}}">Acceuil</a>
+                </li>
+
+                <li>
+                    <a class="nav-link scrollto {% if app.current_route == 'app_main_services' %}active{% endif %}"
+                        href="{{path('app_main_services')}}">Nos Services</a>
+                </li>
+
+
+                <li>
+                    <a class="nav-link scrollto {% if app.current_route == 'app_main_about' %}active{% endif %}"
+                        href="{{path('app_main_about')}}">A propos</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="{% if app.current_route == 'app_training' %}active{% endif %}"><span>Actualités
+                            et Formations</span>
+                        <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li>
+                            <a href="{{path('app_training')}}">Formations</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Télécharger le Programme de
+                                Formation 2022</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
+        <a href="{{path('app_main_quote')}}" class="get-started-btn scrollto x">Obtenir un Devis</a>
+    </div>
+</header>
