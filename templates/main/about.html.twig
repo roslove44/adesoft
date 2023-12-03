@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li>A propos</li>
+            </ol>
+            <h2>A propos | {{company_name}}</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 entries">
+                    <article class="entry entry-single">
+                        <div class="entry-img">
+                            <img src="assets/img/tab3.webp" alt="" class="img-fluid w-100">
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="#">
+                                {{company_name}} : L'entreprise
+                            </a>
+                        </h2>
+
+                        <div class="entry-content">
+                            <p>
+                                ADESOFT TECH est un cabinet d'ingénierie offrant des services de formation, d'étude et
+                                d'assistance-conseils. Nous
+                                sommes spécialisés dans le soutien informatique aux entreprises et aux particuliers.
+                                Pendant que vous consacrez votre
+                                énergie à ce qui compte vraiment pour vous, l'équipe Adesoft Technologies se charge de
+                                résoudre vos problèmes
+                                informatiques en vous proposant des solutions complètes et un service-conseils visant à
+                                optimiser la performance de vos
+                                activités sur divers supports informatiques.
+                            </p>
+
+                            <h3>Mr FOURIER Bénis</h3>
+                            <p>
+                                Adesoft Technologies a été fondée par M. FOURIER Bénis, un passionné d'informatique qui
+                                déploie ses talents et son expérience au service de nombreuses entreprises à travers le
+                                Bénin depuis près de sept (07) ans. Fort de la conviction que l'informatique englobe des
+                                solutions technologiques complètes, de la vente de matériel à la programmation, de la
+                                configuration au soutien technique, de l'installation en réseaux à l'optimisation de vos
+                                espaces de travail. Il prend le temps d'expliquer ses interventions aux clients, visant
+                                ainsi à simplifier votre vie.
+                            </p>
+                            <p>
+                                Gagnez du temps dès maintenant. Nous avons la solution.
+                            </p>
+                        </div>
+                        <a href="{{path('app_main')}}#contact" class="get-started-btn">Contactez-nous</a>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+{% endblock %}

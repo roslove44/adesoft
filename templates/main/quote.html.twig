@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Obtenir un devis{% endblock %}
+
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li>Obtenir un devis</li>
+            </ol>
+            <h2>{{company_name}}</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Obtenir un devis</h2>
+                <p>Simplifiez-vous la réservation avec nous. Remplissez simplement le formulaire de réservation en ligne
+                    ou de demande de devis, et nous vous enverrons notre catalogue ainsi que les détails dans les heures
+                    qui suivent.</p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-envelope"></i>
+                                <h3>Email</h3>
+                                <p>{{company_email}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-phone-call"></i>
+                                <h3>Téléphone et Whatsapp</h3>
+                                <p>
+                                    {{company_phone}}<br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    {{form_start(quoteForm)}}
+                    <p class="text-danger">
+                        {{form_errors(quoteForm)}}
+                    </p>
+                    <div class="row">
+                        <div class="col form-group">
+                            {{form_widget(quoteForm.name)}}
+                        </div>
+                        <div class="col form-group ">
+                            {{form_widget(quoteForm.tel)}}
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        {{form_widget(quoteForm.email)}}
+                    </div>
+                    <div class="form-group mt-2">
+                        {{form_widget(quoteForm.subject)}}
+                    </div>
+                    <div class="form-group mt-2">
+                        {{form_widget(quoteForm.message)}}
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-danger">Soumettre</button>
+                    </div>
+                    {{form_end(quoteForm)}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+</main><!-- End #main -->
+{% endblock %}

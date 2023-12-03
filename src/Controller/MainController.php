@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ContactType;
 use App\Form\NewsletterType;
+use App\Form\QuoteType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,24 +32,28 @@ class MainController extends AbstractController
     #[Route('nos-services', name: '_services')]
     public function services(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/service.html.twig', []);
     }
 
     #[Route('a-propos', name: '_about')]
     public function about(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/about.html.twig', []);
     }
 
     #[Route('obtenir-un-devis', name: '_quote')]
-    public function quote(): Response
+    public function quote(Request $request): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        $quoteForm = $this->createForm(QuoteType::class);
+        $quoteForm->handleRequest($request);
+
+        if ($quoteForm->isSubmitted() && $quoteForm->isValid()) {
+            dd($quoteForm->getData());
+
+            return $this->redirectToRoute('app_main');
+        }
+
+        $quoteForm = $quoteForm->createView();
+        return $this->render('main/quote.html.twig', compact('quoteForm'));
     }
 }

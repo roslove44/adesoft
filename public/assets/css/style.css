@@ -436,11 +436,11 @@ section {
 }
 
 .section-bg {
-  padding: 120px 0;
+  padding: 50px 0;
   color: #fff;
 }
 .section-bg:before {
-  content: "";
+  /* content: ""; */
   background: #1b1b1b;
   position: absolute;
   bottom: 60px;

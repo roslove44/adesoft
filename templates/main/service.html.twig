@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Services{% endblock %}
+
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="index.html">Accueil</a></li>
+                <li>Nos Services</li>
+            </ol>
+            <h2>Services | {{company_name}}</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container" data-aos="fade-up">
+            <p>
+                {{company_name}} est un cabinet d'ingénierie de Formation, d'Etude et d'Assistance Conseils.
+                <br>
+                Vous trouverez çi dessous et en détails, l'ensemble de nos offres ainsi que nos centres d'intèrêts.
+            </p>
+        </div>
+    </section>
+    <section id="pricing" class="pricing section-bg pt-2">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Informatique</h3>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Fourniture de Matériels et Consommables informatiques-bureautique
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Formations et renforcement de capacité sur la gestion des services informatiques
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Gestion de projets informatiques
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Sécurité des Systèmes d'Information
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Audit de système d'information de gestion et de système informatique
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Elaboration des manuels de procédures informatiques
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Réalisation de schéma directeur informatique ; Réalisation et configuration des réseaux
+                                locaux
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Conception et mise en place de systèmes informatiques de gestion
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Graphisme et création de site web Initiation informatique Logiciels informatiques et
+                                diverses applications de gestion
+                            </li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="{{path('app_main_quote')}}" class="btn-buy">Demandez un devis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <h3>COMMUNICATION</h3>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Conception et conduite des projets de communication
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Communication média dont font partie, par exemple, les campagnes publicitaires dans la
+                                presse écrite, dans la télévision
+                                et dans la radio
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Communication hors-média sous forme d'événements (sportifs, culturels, commerciaux, …),
+                                d'actions ciblées dans l'espace urbain (dans la rue, dans un quartier, …)
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Communication sous forme de supports de communication éditorialistes (brochures,
+                                dépliants, affichettes, …)
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Communication web sous forme de blogs, de sites, de web documentaires ou de séries de
+                                films web
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Réalisation Télé & Production de séries audiovisuelles
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Assistance à la production cinématographique
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Conseil en négociations et communication d'entreprise.
+                            </li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="{{path('app_main_quote')}}" class="btn-buy">Demandez un devis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-lg-6 col-md-6">
+                    <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <h3>études</h3>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Etude de marché
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Etude d'impact
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Etudes de Faisabilité
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Etudes de référence
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Suivi et évaluation de projets/ programmes de développement
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Elaboration de budget et système de suivi budgétaire
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Rapport d'activité
+                            </li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="{{path('app_main_quote')}}" class="btn-buy">Demandez un devis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <h3>ENTREPRENEURIAT</h3>
+                        <ul>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Diagnostic des PME/PMI
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Elaboration de business plan
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Accompagnement au financement auprès des banques et SFD
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Suivi/coaching des PME/PMI
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Formations en gestion (Trie, Crée et germe) pour les créateurs et gestionnaires de
+                                micros, petites et moyennes entreprises suivant la méthodologie GERME/BIT
+                            </li>
+                            <li>
+                                <i class="ri-check-double-line"></i>
+                                Formations intra entreprise et sur mesure entièrement conçues à la demande des clients
+                            </li>
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="{{path('app_main_quote')}}" class="btn-buy">Demandez un devis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+{% endblock %}
