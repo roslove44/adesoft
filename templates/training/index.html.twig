@@ -1,20 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TrainingController!{% endblock %}
+{% block title %}Formations{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main id="main">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/rosta/3D Objects/ROSTAND/PROJET/adesoft/src/Controller/TrainingController.php'|file_link(0) }}">src/Controller/TrainingController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/rosta/3D Objects/ROSTAND/PROJET/adesoft/templates/training/index.html.twig'|file_link(0) }}">templates/training/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <ol>
+                <li><a href="{{path('app_main')}}">Accueil</a></li>
+                <li>Formations</li>
+            </ol>
+            <h2>Liste des formations</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Formations disponibles</h2>
+                <p></p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6">
+                    <div class="portfolio-details mt-4">
+                        <div class="portfolio-info">
+                            <h3>Préparation à la certification ITIL</h3>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, cumque?
+                            </p>
+                            <ul>
+                                <li><strong>Lieu de Formation</strong>: HOTEL Radisson Blu</li>
+                                <li><strong>Période de formation</strong>: 01 March, 2020 au 13 June, 2020</li>
+                                <li><strong>Pass</strong>: <a href="#" class="fw-bolder">1.000.000 FCFA</a></li>
+                            </ul>
+                            <a href="{{path('app_training_request')}}" class="get-started-btn ms-0">Participez</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+</main><!-- End #main -->
 {% endblock %}
