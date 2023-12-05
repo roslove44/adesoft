@@ -27,22 +27,47 @@
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
+                {% for training in trainings %}
                 <div class="col-md-6">
                     <div class="portfolio-details mt-4">
                         <div class="portfolio-info">
-                            <h3>Préparation à la certification ITIL</h3>
+                            <h3>{{training.name}}</h3>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, cumque?
+                                {{training.description}}
                             </p>
                             <ul>
-                                <li><strong>Lieu de Formation</strong>: HOTEL Radisson Blu</li>
-                                <li><strong>Période de formation</strong>: 01 March, 2020 au 13 June, 2020</li>
-                                <li><strong>Pass</strong>: <a href="#" class="fw-bolder">1.000.000 FCFA</a></li>
+                                <li><strong>Lieu de Formation</strong>: {{training.location}}</li>
+                                <li><strong>Période de formation</strong>:
+                                    {{training.getStartAt | date("d F Y")}}
+                                    {% if training.getEndAt %}
+                                    au {{training.getEndAt | date("d F Y")}}
+                                    {% endif %}
+                                </li>
+                                <li><strong>Pass</strong>: <a href="#" class="fw-bolder">
+                                        {% if training.pass == 0 %}
+                                        Gratuit
+                                        {% else %}
+                                        {{training.pass | format_currency('XOF')}}
+                                        {% endif %}
+                                    </a></li>
                             </ul>
-                            <a href="{{path('app_training_request')}}" class="get-started-btn ms-0">Participez</a>
+                            {% set currentDate = "now"|date("Y-m-d H:i:s") %}
+                            {% set trainingStartAtFormatted = training.getStartAt|date("Y-m-d H:i:s") %}
+
+                            {% if trainingStartAtFormatted > currentDate %}
+                            <a href="{{ path('app_training_request', { id: training.id }) }}"
+                                class="get-started-btn ms-0">
+                                Participez
+                            </a>
+                            {% elseif trainingStartAtFormatted <= currentDate %} <a href="#"
+                                class="btn btn-warning ms-0">
+                                Clôturé
+                                </a>
+                                {% endif %}
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
 
         </div>

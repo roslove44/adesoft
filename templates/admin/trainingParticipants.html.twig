@@ -84,13 +84,13 @@
                                 #{{loop.index}}
                             </td>
                             <td>
-                                {{training.name}}
+                                {{participant.name}}
                             </td>
                             <td>
-                                {{training.email}} | {{training.tel}}
+                                {{participant.email}} | {{participant.tel}}
                             </td>
                             <td class="align-middle d-flex flex-column">
-                                {{training.registeredAt | date('j F Y')}}
+                                {{participant.registeredAt | date('j F Y')}}
                             </td>
                         </tr>
                         {% endfor %}

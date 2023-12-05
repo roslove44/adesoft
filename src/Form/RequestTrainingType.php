@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Participants;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -40,6 +41,7 @@ class RequestTrainingType extends AbstractType
     {
         $resolver->setDefaults([
             'required' => true,
+            'data_class' => Participants::class,
         ]);
     }
 }
