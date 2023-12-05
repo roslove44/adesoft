@@ -1,0 +1,23 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<!--Container Main start-->
+<div class="container-fluid mt-5 pt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h4>Mise à jour de formation</h4>
+            <hr>
+            <div>
+                {% if form_errors(trainingForm) %}
+                <div class="alert alert-danger">
+                    {{form_errors(trainingForm)}}
+                </div>
+                {% endif %}
+
+                {{form_start(trainingForm)}}
+                {{form_end(trainingForm)}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
