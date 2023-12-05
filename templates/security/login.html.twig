@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="{{path('app_main')}}">Accueil</a></li>
+                <li>Connexion</li>
+            </ol>
+            <h2>{{company_name}}</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Connexion</h2>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <form method="post">
+                    {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a
+                            href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                            placeholder="jonhdoe@yahoo.com" class="form-control shadow-none mb-2" autocomplete="email"
+                            required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="inputPassword" class="form-control shadow-none mb-2"
+                            placeholder="******************" autocomplete="current-password" required>
+                    </div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                    <button class="btn btn-lg btn-danger" type="submit">
+                        Se connecter
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}

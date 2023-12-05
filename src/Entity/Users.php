@@ -27,6 +27,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column]
+    private ?bool $is_activate = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,5 +98,17 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function isIsActivate(): ?bool
+    {
+        return $this->is_activate;
+    }
+
+    public function setIsActivate(bool $is_activate): static
+    {
+        $this->is_activate = $is_activate;
+
+        return $this;
     }
 }
