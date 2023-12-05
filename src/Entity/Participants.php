@@ -27,6 +27,9 @@ class Participants
     #[ORM\ManyToMany(targetEntity: Trainings::class, inversedBy: 'participants')]
     private Collection $trainings;
 
+    #[ORM\Column]
+    private ?\DateTimeImmutable $registered_at = null;
+
     public function __construct()
     {
         $this->trainings = new ArrayCollection();
@@ -93,6 +96,18 @@ class Participants
     public function removeTraining(Trainings $training): static
     {
         $this->trainings->removeElement($training);
+
+        return $this;
+    }
+
+    public function getRegisteredAt(): ?\DateTimeImmutable
+    {
+        return $this->registered_at;
+    }
+
+    public function setRegisteredAt(\DateTimeImmutable $registered_at): static
+    {
+        $this->registered_at = $registered_at;
 
         return $this;
     }

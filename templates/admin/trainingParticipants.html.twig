@@ -3,45 +3,16 @@
 {% block body %}
 <!--Container Main start-->
 <div class="container-fluid mt-5 pt-4">
-    <div class="row">
-        <div class="col-lg-4">
-            <h4>Ajoutez une formation</h4>
-            <hr>
-            <div>
-                {% if form_errors(trainingForm) %}
-                <div class="alert alert-danger">
-                    {{form_errors(trainingForm)}}
-                </div>
-                {% endif %}
-
-                {{form_start(trainingForm)}}
-                {{form_end(trainingForm)}}
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <h4>Liste des Formations</h4>
-            <hr>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
-                        <th></th>
                         <th>Formation</th>
                         <th>Détails</th>
                     </thead>
                     <tbody>
-                        {% if trainings | length == 0 %}
                         <tr>
-                            <td colspan="4">
-                                <div class="alert alert-secondary">
-                                    Aucune Formation
-                                </div>
-                            </td>
-                        </tr>
-                        {% endif %}
-
-                        {% for training in trainings %}
-                        <tr>
-                            <td class="fw-bold align-middle">#{{loop.index}} </td>
                             <td>
                                 <strong>Titre : </strong> {{training.name}}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"
@@ -75,19 +46,51 @@
                                 </span>
                             </td>
                             <td class="align-middle d-flex flex-column">
-                                <a href="{{path('app_admin_trainings_participants', {id: training.id})}}"
-                                    class="text-danger" title="Découvrez la liste des participants">
+                                <a href="#" class="text-danger" title="Découvrez la liste des participants">
                                     <i class="bx bx-user"></i>
                                 </a>
                                 <a href="{{path('app_admin_trainings_edit', {id: training.id})}}" class="text-danger"
                                     title="Modifiez cette formation">
                                     <i class="bx bx-edit"></i>
                                 </a>
-                                <a data-href="{{path('app_admin_trainings_delete', {id: training.id})}}"
-                                    style="cursor: pointer;" class="text-danger" title="Supprimez cette formation"
-                                    data-token="{{csrf_token('delete' ~ training.id)}}" onclick="deleteTraining(this)">
-                                    <i class=" bx bx-trash"></i>
-                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <h4>Liste des participants</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>N°</th>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Inscription</th>
+                    </thead>
+                    <tbody>
+                        {% if participants | length == 0 %}
+                        <tr>
+                            <td colspan="4">
+                                <div class="alert alert-secondary">Aucun participant Enregistré</div>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% for participant in participants %}
+                        <tr>
+                            <td>
+                                #{{loop.index}}
+                            </td>
+                            <td>
+                                {{training.name}}
+                            </td>
+                            <td>
+                                {{training.email}} | {{training.tel}}
+                            </td>
+                            <td class="align-middle d-flex flex-column">
+                                {{training.registeredAt | date('j F Y')}}
                             </td>
                         </tr>
                         {% endfor %}
@@ -100,31 +103,6 @@
 {% endblock %}
 {% block javascripts %}
 <script>
-    function deleteTraining(e) {
-        console.log(e);
-        if (confirm("Voulez-vous supprimez cette formation ? ")) {
-            fetch(e.getAttribute("data-href"), {
-                method: "DELETE",
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    _token: e.dataset.token,
-                }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        alert("Formation supprimée avec succès");
-                        location.reload();
-                    } else {
-                        alert(data.error);
-                    }
-                });
-
-        }
-    }
     $(document).ready(function () {
         $('[data-toggle="popover"]').popover();
     });

@@ -9,11 +9,13 @@
                 <span class="nav_logo-name">{{company_name}}</span>
             </a>
             <div class="nav_list">
-                <a href="#" class="nav_link active">
+                {# <a href="#" class="nav_link active">
                     <i class='bx bx-grid-alt nav_icon'></i>
                     <span class="nav_name">Tableau de bord</span>
-                </a>
-                <a href="{{path('app_admin_trainings')}}" class="nav_link">
+                </a> #}
+                <a href="{{path('app_admin_trainings')}}" class="nav_link 
+                    {% if app.current_route == 'app_admin_trainings'%}active{% endif %}
+                    ">
                     <i class='bx bx-message-square-detail nav_icon'></i>
                     <span class="nav_name">Formations</span>
                 </a>

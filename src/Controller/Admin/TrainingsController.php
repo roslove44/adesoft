@@ -69,4 +69,11 @@ class TrainingsController extends AbstractController
         }
         return new JsonResponse(['error' => 'Token Invalide !']);
     }
+
+    #[Route('/administration/formations/participants/{id}', name: 'app_admin_trainings_participants')]
+    public function trainingsParticipants(Request $request, Trainings $training): Response
+    {
+        $participants = $training->getParticipants();
+        return $this->render('admin/trainingParticipants.html.twig', compact('training', 'participants'));
+    }
 }
