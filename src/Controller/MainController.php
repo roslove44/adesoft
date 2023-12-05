@@ -51,15 +51,31 @@ class MainController extends AbstractController
     }
 
     #[Route('obtenir-un-devis', name: '_quote')]
-    public function quote(Request $request): Response
+    public function quote(Request $request, SendMailService $mailer): Response
     {
         $quoteForm = $this->createForm(QuoteType::class);
         $quoteForm->handleRequest($request);
 
         if ($quoteForm->isSubmitted() && $quoteForm->isValid()) {
-            dd($quoteForm->getData());
-
-            return $this->redirectToRoute('app_main');
+            $data = $quoteForm->getData();
+            $reply_to = $data['email'];
+            $company_email = $this->getParameter('company_email');
+            $data['client_email'] = $data['email'];
+            unset($data['email']);
+            $mailer->send(
+                $company_email,
+                $reply_to,
+                $data['subject'] . " : " . $data['name'],
+                'quote',
+                $data,
+                $reply_to
+            );
+            $this->addFlash(
+                'success',
+                "Nous vous remercions d'avoir pris le temps de remplir notre formulaire de contact.
+                 Nous avons bien reçu votre demande et nous vous reviendrons dans les plus brefs délais."
+            );
+            return $this->redirectToRoute('app_main_quote');
         }
 
         $quoteForm = $quoteForm->createView();
