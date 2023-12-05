@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
-use App\Form\NewsletterType;
 use App\Form\QuoteType;
+use App\Service\SendMailService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,17 +14,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     #[Route('', name: '')]
-    public function index(Request $request): Response
+    public function index(Request $request, SendMailService $mailer): Response
     {
         $contactForm = $this->createForm(ContactType::class);
         $contactForm->handleRequest($request);
 
         if ($contactForm->isSubmitted() && $contactForm->isValid()) {
-            dd($contactForm->getData());
-
+            $data = $contactForm->getData();
+            $reply_to = $data['client_email'];
+            $company_email = $this->getParameter('company_email');
+            $mailer->send(
+                $company_email,
+                $reply_to,
+                "Prise de Contact : " . $data['name'],
+                'contact',
+                $data,
+                $reply_to
+            );
+            $this->addFlash('success', "Nous vous remercions d'avoir pris le temps de remplir notre formulaire de contact. Nous avons bien reçu votre demande et nous vous reviendrons dans les plus brefs délais.");
             return $this->redirectToRoute('app_main');
         }
-
         $contactForm = $contactForm->createView();
         return $this->render('main/index.html.twig', compact('contactForm'));
     }

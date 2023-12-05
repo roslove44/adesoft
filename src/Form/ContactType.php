@@ -20,7 +20,7 @@ class ContactType extends AbstractType
                     'placeholder' => 'Nom',
                 ]
             ])
-            ->add('email', EmailType::class, [
+            ->add('client_email', EmailType::class, [
                 'attr' => [
                     'class' => 'form-control shadow-none',
                     'placeholder' => 'Adresse Mail',
