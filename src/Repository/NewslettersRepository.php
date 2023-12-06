@@ -18,7 +18,7 @@ class NewslettersRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Newsletter::class);
+        parent::__construct($registry, Newsletters::class);
     }
 
     //    /**

@@ -19,7 +19,8 @@
                     <i class='bx bx-message-square-detail nav_icon'></i>
                     <span class="nav_name">Formations</span>
                 </a>
-                <a href="#" class="nav_link">
+                <a href="{{path('app_admin_newsletter')}}"
+                    class="nav_link {% if app.current_route == 'app_admin_newsletter'%}active{% endif %}">
                     <i class='bx bx-bookmark nav_icon'></i>
                     <span class="nav_name">Newsletter</span>
                 </a>

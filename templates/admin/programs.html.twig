@@ -1,0 +1,94 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<!--Container Main start-->
+<div class="container-fluid mt-5 pt-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Ajoutez un programme</h4>
+            <hr>
+            <div>
+                {% if form_errors(programsForm) %}
+                <div class="alert alert-danger">
+                    {{form_errors(programsForm)}}
+                </div>
+                {% endif %}
+
+                {{form_start(programsForm)}}
+                {{form_end(programsForm)}}
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h4>Liste des Programmes</h4>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Années</th>
+                        <th>Fichiers</th>
+                    </thead>
+                    <tbody>
+                        {% if programs | length == 0 %}
+                        <tr>
+                            <td colspan="2">
+                                <div class="alert alert-secondary">
+                                    Aucun programme annuel défini.
+                                </div>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% for program in programs %}
+                        <tr>
+                            <td class="fw-bold align-middle">#{{program.year}} </td>
+                            <td>
+                                <i class="bx bx-file"></i>
+                                <a href="{{asset('admin/programs/')~program.fileSrc}}"
+                                    target="_blank">{{program.fileSrc}}</a>
+                                <a data-href="{{path('app_admin_programs_delete', {id: program.id})}}"
+                                    style="cursor: pointer;" class="text-danger" title="Supprimez cette formation"
+                                    data-token="{{csrf_token('delete' ~ program.id)}}" onclick="deleteProgram(this)">
+                                    <i class=" bx bx-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+<script>
+    function deleteProgram(e) {
+        console.log(e);
+        if (confirm("Voulez-vous supprimez ce programme ? ")) {
+            fetch(e.getAttribute("data-href"), {
+                method: "DELETE",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    _token: e.dataset.token,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        alert("Programme supprimée avec succès");
+                        location.reload();
+                    } else {
+                        alert(data.error);
+                    }
+                });
+
+        }
+    }
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+{% endblock %}
