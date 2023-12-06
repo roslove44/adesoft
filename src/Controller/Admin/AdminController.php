@@ -20,7 +20,7 @@ class AdminController extends AbstractController
     #[Route('/administration', name: 'app_admin')]
     public function index(Request $request): Response
     {
-        return $this->render('admin.html.twig');
+        return $this->redirectToRoute('app_admin_trainings');
     }
 
     #[Route('/administration/newsletter', name: 'app_admin_newsletter')]
