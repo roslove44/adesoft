@@ -4,7 +4,7 @@
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
         <div>
-            <a href="#" class="nav_logo">
+            <a href="{{path('app_main')}}" class="nav_logo">
                 <i class='bx bx-layer nav_logo-icon'></i>
                 <span class="nav_logo-name">{{company_name}}</span>
             </a>
@@ -19,19 +19,20 @@
                     <i class='bx bx-message-square-detail nav_icon'></i>
                     <span class="nav_name">Formations</span>
                 </a>
+                <a href="{{path('app_admin_programs')}}"
+                    class="nav_link {% if app.current_route == 'app_admin_programs'%}active{% endif %}">
+                    <i class='bx bx-folder nav_icon'></i>
+                    <span class="nav_name">Programmes <br> Annuels</span>
+                </a>
                 <a href="{{path('app_admin_newsletter')}}"
                     class="nav_link {% if app.current_route == 'app_admin_newsletter'%}active{% endif %}">
                     <i class='bx bx-bookmark nav_icon'></i>
                     <span class="nav_name">Newsletter</span>
                 </a>
-                <a href="#" class="nav_link">
-                    <i class='bx bx-folder nav_icon'></i>
-                    <span class="nav_name">Programmes <br> Annuels</span>
-                </a>
-                <a href="#" class="nav_link">
+                {# <a href="#" class="nav_link">
                     <i class='bx bx-user nav_icon'></i>
                     <span class="nav_name">Membres</span>
-                </a>
+                </a> #}
                 {# <a href="#" class="nav_link">
                     <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
                     <span class="nav_name">Stats</span>

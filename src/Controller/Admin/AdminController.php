@@ -30,7 +30,7 @@ class AdminController extends AbstractController
         return $this->render('admin/newsletter.html.twig', compact('newsletters'));
     }
 
-    #[Route('/administration/programmes_annuels', name: 'app_admin_programs')]
+    #[Route('/administration/programmes-annuels', name: 'app_admin_programs')]
     public function programs(
         ProgramsRepository $programsRepository,
         Request $request,

@@ -53,9 +53,13 @@
                             <ul>
                                 <li><strong>Lieu de Formation</strong>: {{training.location}}</li>
                                 <li><strong>Période de formation</strong>:
-                                    {{training.getStartAt | date("d F Y")}}
+                                    {{training.getStartAt | date("d")}}
+                                    {{training.getStartAt | date("F") | trans}}
+                                    {{training.getStartAt | date("Y")}}
                                     {% if training.getEndAt %}
-                                    au {{training.getEndAt | date("d F Y")}}
+                                    au {{training.getEndAt | date("d")}}
+                                    {{training.getEndAt | date("F") | trans}}
+                                    {{training.getEndAt | date("Y")}}
                                     {% endif %}
                                 </li>
                                 <li><strong>Pass</strong>: <a href="#" class="fw-bolder">
