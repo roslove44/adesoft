@@ -6,12 +6,25 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>{% block title %}{{company_name}}{% endblock %}</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta
+        content="Fourniture de Matériels et Consommables informatiques ; Formations et renforcement de capacité en gestion des services informatiques, projets informatiques, sécurité des systèmes d'information ; Audit et élaboration de manuels de procédures informatiques ; Réalisation de schéma directeur informatique ; Conception et mise en place de systèmes informatiques de gestion ; Graphisme, création de site web et initiation informatique ; Études de marché, d'impact, de faisabilité et de référence ; Suivi et évaluation de projets/programmes de développement ; Élaboration de budget et suivi budgétaire ; Diagnostic, business plan et accompagnement au financement des PME/PMI ; Formations en gestion ; Conception et conduite de projets de communication ; Communication média, hors-média, éditorialiste et web ; Réalisation télévisuelle et assistance à la production cinématographique ; Conseil en négociations et communication d'entreprise ; Production de séries audiovisuelles ; Rapport d'activité."
+        name="keywords">
+    <meta content="Votre partenaire en solutions & innovations technologiques, formation assistance coaching."
+        name="description">
+    <!-- Meta pour les réseaux sociaux -->
+    <meta property="og:title" content="{% block seoTitle %}{{company_name}}{% endblock %}">
+    <meta property="og:description"
+        content="Votre partenaire en solutions & innovations technologiques, formation assistance coaching.">
+    <meta property="og:image" content="{{ absolute_url(asset('assets/images/hero-bg.webp')) }}">
+    <meta property="og:url" content="{{absolute_url(path(app.current_route))}}">
+    <meta name="twitter:title" content="{% block seoTitle2 %}{{company_name}}{% endblock %}">
+    <meta name="twitter:description"
+        content="Votre partenaire en solutions & innovations technologiques, formation assistance coaching.">
+    <meta name="twitter:image" content="{{ absolute_url(asset('assets/images/hero-bg.webp')) }}">
+    <meta name="author" content="Rostand MIGAN (Rost Digital Services)">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{asset('assets/img/asbrand.png')}}" rel="icon">
 
     <!-- Google Fonts -->
     <link
