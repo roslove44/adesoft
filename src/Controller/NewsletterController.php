@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Newsletters;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +14,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class NewsletterController extends AbstractController
 {
     #[Route('/newsletter', name: 'app_newsletter', methods: ['POST'])]
-    public function index(Request $request, ValidatorInterface $validator): Response
+    public function index(Request $request, ValidatorInterface $validator, EntityManagerInterface $em): Response
     {
         $email = $request->request->get('email');
         $constraint = new Assert\Email();
@@ -23,7 +25,11 @@ class NewsletterController extends AbstractController
             // dd($violations);
             return $this->redirect($request->headers->get('referer'));
         }
-        // dd($email);
+        $newsletter = new Newsletters();
+        $newsletter->setEmail($email);
+        $em->persist($newsletter);
+        $em->flush();
+        $this->addFlash('success', "Bienvenue dans notre newsletter.");
         return $this->redirect($request->headers->get('referer'));
     }
 }
