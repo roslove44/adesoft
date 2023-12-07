@@ -25,7 +25,7 @@ class MainController extends AbstractController
             $company_email = $this->getParameter('company_email');
             $mailer->send(
                 $company_email,
-                $reply_to,
+                $company_email,
                 "Prise de Contact : " . $data['name'],
                 'contact',
                 $data,
@@ -64,7 +64,7 @@ class MainController extends AbstractController
             unset($data['email']);
             $mailer->send(
                 $company_email,
-                $reply_to,
+                $company_email,
                 $data['subject'] . " : " . $data['name'],
                 'quote',
                 $data,
